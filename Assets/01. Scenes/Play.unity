@@ -187,7 +187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &38991428
 GameObject:
@@ -516,9 +516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b463624558646dc4f8efe9ce0e751140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiManager: {fileID: 1493026950}
-  _count: 0
-  _time: 0
+  uiManager: {fileID: 1493026950}
+  fallBox: 0
+  currentTime: 3
 --- !u!1001 &565611133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 611605862}
   - component: {fileID: 611605863}
   m_Layer: 0
-  m_Name: Capsule - Player
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +741,7 @@ Transform:
   m_Children:
   - {fileID: 38991429}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &611605861
 Rigidbody:
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 624151314}
   - component: {fileID: 624151313}
   m_Layer: 0
-  m_Name: Cube - Ground
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -880,7 +880,7 @@ Transform:
   m_LocalScale: {x: 15, y: 1, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &750305457
 GameObject:
@@ -1068,7 +1068,7 @@ Transform:
   - {fileID: 1381000293}
   - {fileID: 1376568084}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &860317934
 PrefabInstance:
@@ -1681,7 +1681,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 52, y: 45, z: 0}
 --- !u!1001 &1385749884
 PrefabInstance:
@@ -1862,11 +1862,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c3705c9d55c0c4ba79e43462f75db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textTime: {fileID: 1144813697}
-  _textClear: {fileID: 1724335078}
-  _textFailed: {fileID: 1906719692}
-  _imageBG: {fileID: 750305459}
-  _buttonReplay: {fileID: 991842941}
+  timeText: {fileID: 1144813697}
+  clearText: {fileID: 1724335078}
+  failedText: {fileID: 1906719692}
+  backgroundImage: {fileID: 750305459}
+  replayButton: {fileID: 991842941}
 --- !u!1001 &1549884017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2368,7 +2368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4844070208608861814
 PrefabInstance:

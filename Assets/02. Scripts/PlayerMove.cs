@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Basic_Move3 : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public float MoveSpeed;
     Vector3 lookDirection;
@@ -13,9 +13,7 @@ public class Basic_Move3 : MonoBehaviour
             Input.GetKey(KeyCode.UpArrow) ||
             Input.GetKey(KeyCode.DownArrow))
         {
-            //float forwardKeyValue = Input.GetAxisRaw("Vertical");
             float forwardKeyValue = Input.GetAxis("Vertical");
-            //float sideKeyValue = Input.GetAxisRaw("Horizontal");
             float sideKeyValue = Input.GetAxis("Horizontal");
             lookDirection = forwardKeyValue * Vector3.forward + sideKeyValue * Vector3.right;
 
