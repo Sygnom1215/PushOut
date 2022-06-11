@@ -7,11 +7,16 @@ public class FBCManager : MonoBehaviour
     public UIManager uiManager;
     public int fallBox = 0;
     public float currentTime = 30f;
-    bool endGame = false;
+    private GameObject[] arrageBox;
+    bool IsEndGame = false;
 
+    private void Start()
+    {
+        arrageBox = GameObject.FindGameObjectsWithTag("Check Target");
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (endGame == true)
+        if (IsEndGame == true)
             return;
 
         if (other.gameObject.CompareTag("Check Target"))
@@ -19,15 +24,15 @@ public class FBCManager : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            endGame = true;
+            IsEndGame = true;
             uiManager.failedText.gameObject.SetActive(true);
             uiManager.backgroundImage.gameObject.SetActive(true);
             uiManager.replayButton.gameObject.SetActive(true);
         }
 
-        if (fallBox >= 16)
+        if (fallBox >= arrageBox.Length)
         {
-            endGame = true;
+            IsEndGame = true;
             uiManager.clearText.gameObject.SetActive(true);
             uiManager.backgroundImage.gameObject.SetActive(true);
             uiManager.replayButton.gameObject.SetActive(true);
@@ -41,14 +46,14 @@ public class FBCManager : MonoBehaviour
 
         if (currentTime <= 0)
         {
-            endGame = true;
+            IsEndGame = true;
             uiManager.failedText.gameObject.SetActive(true);
             uiManager.backgroundImage.gameObject.SetActive(true);
             uiManager.replayButton.gameObject.SetActive(true);
             return;
         }
 
-        if (endGame == true)
+        if (IsEndGame == true)
             return;
     }
 }

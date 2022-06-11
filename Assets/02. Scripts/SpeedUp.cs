@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class SpeedUp : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject player;
+
     private PlayerMove playerMove;
+
+    private bool IsEffect = false;
+
     void Start()
     {
-        playerMove = GetComponent<PlayerMove>();
+        playerMove = player.GetComponent<PlayerMove>();
+
     }
 
     //public void DestroyAfterTime()
@@ -18,8 +25,9 @@ public class SpeedUp : MonoBehaviour
     public void RunItem()
     {
         Debug.Log("RunItem()");
-        UpSpeed();
-        //playerMove.moveSpeed *= 1.5f;
+        //UpSpeed();
+        IsEffect = true;
+        StartCoroutine(UpSpeed());
         Destroy(gameObject);
     }
     private void OnCollisionEnter(Collision collision)
@@ -29,8 +37,24 @@ public class SpeedUp : MonoBehaviour
             RunItem();
         }
     }
-    public void UpSpeed()
+    //public void UpSpeed()
+    //{
+    //    playerMove.moveSpeed *= 1.5f;
+    //}
+
+    public IEnumerator UpSpeed()
     {
-        playerMove.moveSpeed = 10f;
+        if(IsEffect == true)
+        {
+            playerMove.moveSpeed *= 1.5f;
+            yield return new WaitForSeconds(3f);
+        }
+        if (IsEffect == false)
+        {
+            playerMove.moveSpeed = 10f;
+            yield return null;
+            // 중단이 안 됨 어케 할 지 공부할 것
+        }
+
     }
 }
