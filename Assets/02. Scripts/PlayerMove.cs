@@ -5,7 +5,7 @@ public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed;
     private Animator anim;
-    Vector3 lookDirection;
+    private Vector3 lookDirection;
 
     private void Awake()
     {
@@ -17,7 +17,8 @@ public class PlayerMove : MonoBehaviour
         {
             float forwardKeyValue = Input.GetAxis("Vertical");
             float sideKeyValue = Input.GetAxis("Horizontal");
-            anim.SetBool("IsWalk", true);
+            if (anim != null)
+                anim.SetBool("IsWalk", true);
 
             lookDirection = forwardKeyValue * Vector3.forward + sideKeyValue * Vector3.right;
 
@@ -25,7 +26,11 @@ public class PlayerMove : MonoBehaviour
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
         }
         else
-            anim.SetBool("IsWalk", false);
+        {
+            if(anim != null)
+                anim.SetBool("IsWalk", false);
+        }
+            
 
     }
 
