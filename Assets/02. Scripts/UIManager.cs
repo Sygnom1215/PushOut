@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public Image backgroundImage;
     public Button replayButton;
     public Button nextStageButton;
+    public string _nextScene;
 
     private void Start()
     {
@@ -28,6 +29,6 @@ public class UIManager : MonoBehaviour
     }
     public void NextStage()
     {
-        
+        SceneManager.LoadScene(_nextScene);
     }
 }

@@ -161,6 +161,7 @@ MonoBehaviour:
   backgroundImage: {fileID: 1800567843}
   replayButton: {fileID: 1866851066}
   nextStageButton: {fileID: 1117654828}
+  _nextScene: Stage02
 --- !u!114 &49129237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1406,7 +1407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1117654827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1470,7 +1471,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1117654829}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 49129236}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: NextStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1117654829
 MonoBehaviour:
   m_ObjectHideFlags: 0

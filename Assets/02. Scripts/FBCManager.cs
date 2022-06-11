@@ -28,6 +28,7 @@ public class FBCManager : MonoBehaviour
             uiManager.failedText.gameObject.SetActive(true);
             uiManager.backgroundImage.gameObject.SetActive(true);
             uiManager.replayButton.gameObject.SetActive(true);
+            uiManager.nextStageButton.gameObject.SetActive(true);
         }
 
         if (fallBox >= arrageBox.Length)
